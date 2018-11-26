@@ -11,8 +11,9 @@ INDEX VERSION 1.131+F:\ComputerLanguage\Java_Eclipse\JP181126_01_Plinko\.metadat
 1180489742.index
 2161747041.index
 146530134.index
-1394848873.index
 866495595.index
+1394848873.index
+4224357331.index
 1607282252.index
 3173990942.index
 3964918290.index

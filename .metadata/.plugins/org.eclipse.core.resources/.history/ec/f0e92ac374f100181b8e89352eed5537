@@ -19,7 +19,7 @@ public class Plinko_01 {
 	private static int[] tokenLine = {1,2,3,4,5,4,3,2,1};
 	private static int[] prizeLine = {100,200,300,400,500,400,300,200,100};
 
-	// Time delays when token falls
+	// Time Delay: When Token Falls
 	static int Delay = 500;
 
 
