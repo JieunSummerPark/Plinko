@@ -3,9 +3,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Plinko_01 {
 
-	static String userName;
-	static int earnedToken;
-	static int leftToken;
+	private static String userName;
+	private static int earnedToken;
+	private static int leftToken;
 
 	private static int slot;
 	private static int boardSerial;
@@ -19,9 +19,8 @@ public class Plinko_01 {
 	private static int[] tokenLine = {1,2,3,4,5,4,3,2,1};
 	private static int[] prizeLine = {100,200,300,400,500,400,300,200,100};
 
-	// Time delays when token falls
+	// Time delays 500 milliseconds when each token falls.
 	static int Delay = 500;
-
 
 	public static void main(String[] args) {
 
@@ -99,14 +98,12 @@ public class Plinko_01 {
 			System.out.println("\nThat token landed in slot (" + (boardParallel+1) + ")."
 					+ "\nThat token gained " + tokenPoints + " points."
 					+ "\nYou have " + leftToken + " tokens left.");
-
-
 		}
 
 		System.out.println(
 				"\n\n\n-----------------------------------------------------------------------------"
-				+ "\n----------------------------------GameOver-----------------------------------"
-				+ "\n-----------------------------------------------------------------------------\n\n\n");
+						+ "\n----------------------------------GameOver-----------------------------------"
+						+ "\n-----------------------------------------------------------------------------\n\n\n");
 
 		if (totalPoints < 1000)
 			System.out.println("Better luck next time! " + userName + " only managed to collect " + totalPoints + " points.");
@@ -119,26 +116,20 @@ public class Plinko_01 {
 
 	private static void putOOO() {
 
-		boardSerial=0;
-		plinkoBoard[boardSerial][boardParallel] = " O ";
+		plinkoBoard[0][boardParallel] = " O ";
 
 		for (boardSerial=1; boardSerial<plinkoBoard.length; boardSerial++) {
-
 			if (boardParallel>0 && boardParallel<8) {
-
 				int plusORminus = (int)(Math.random() * 2);
-
 				if (plusORminus == 0)
 					ranNum = 1;
 				else if (plusORminus == 1)
 					ranNum = -1;
-
 			} else if (boardParallel==0) {
 				ranNum = 1;
 			} else if (boardParallel==8) {
 				ranNum = -1;
 			}
-
 			boardParallel += ranNum;
 			plinkoBoard[boardSerial][boardParallel] = " O ";
 		}
@@ -185,7 +176,8 @@ public class Plinko_01 {
 				System.out.print(plinkoBoard[i][j] + "\t");				
 			}
 			System.out.println("");
-
+			
+			// This is Time delay code. It makes delays between each lines.
 			try {
 				for(int k=0; k<1; k++) {
 					TimeUnit.MILLISECONDS.sleep(Delay);
@@ -194,9 +186,8 @@ public class Plinko_01 {
 				e.printStackTrace();
 			}
 
-
 		}
-
+		
 	}
 
 	private static void printTokenLine() {
