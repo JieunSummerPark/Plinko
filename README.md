@@ -1,2 +1,2 @@
 # Plinko
-Plinko from Computer Science I
+Plinko for Computer Science I
